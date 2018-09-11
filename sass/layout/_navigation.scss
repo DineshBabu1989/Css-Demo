@@ -1,0 +1,167 @@
+/*******************MAIN NAVIGATION BAR*******************/
+.navbar-mobile {
+  display: none;
+}
+
+#navbar-mobile__sidebar {
+  display: none;
+}
+
+#content {
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  #content {
+    height: 100vh;
+    box-shadow: 8px -1px 9px -10px rgba(0, 0, 0, 0.78);
+    transition: margin-left 250ms easeout;
+  }
+}
+
+.navbar-main {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  color: $color-white;
+  background-color: $color-primary-dark;
+  align-items: center;
+  text-transform: uppercase;
+  height: 8rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  &__item {
+    color: $color-white;
+    margin-top: 1rem;
+    text-decoration-style: none;
+  }
+
+  &__item:after {
+    @include createLine;
+  }
+
+  &__item:hover:after {
+    @include showLine;
+  }
+
+  &__logo {
+    width: 12rem;
+    height: 10rem;
+  }
+}
+
+/*******************MOBILE NAVIGATION BAR*******************/
+
+@media (max-width: 768px) {
+  /*Hide main navbar*/
+  #navbar-main {
+    display: none;
+  }
+
+  /*Mobile top navbar*/
+
+  .navbar-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primary-dark;
+    height: 8rem;
+    &__logo {
+      width: 12rem;
+      height: 10rem;
+      margin-left: 1rem;
+    }
+    &__button {
+      width: 4.5rem;
+      height: 4.5rem;
+      background-color: $color-black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      cursor: pointer;
+    }
+  }
+
+  //Move content to left on button press
+
+  #content.active {
+    margin-left: -60%;
+  }
+
+  //Equalising Height of content and navbar
+
+  .wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100vh;
+  }
+
+  /*Mobile side navbar*/
+
+  //Sidebar hidden from view in mobile devices
+
+  #navbar-mobile__sidebar {
+    display: flex;
+    background-color: $color-primary-light;
+    margin-right: -60%;
+    width: 60%;
+    height: 100vh;
+    transition: margin-right 250ms ease-out;
+    -webkit-transition: margin-right 250ms ease-out;
+
+    &.active {
+      margin-right: 0px;
+    }
+  }
+
+  //Styling nav items in sidebar
+
+  .navbar-mobile {
+    &__list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    &__item {
+      list-style: none;
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    &__item a {
+      color: $color-primary-dark;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-right: 5rem;
+    }
+
+    //Current page indication line for navitems in mobile (invisible intially)
+
+    &__item a:after {
+      display: none;
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      height: 0.2rem;
+      width: 2.2rem;
+      background-color: black;
+    }
+
+    // Mobile navbar list item active with dashed line and bolded text
+
+    &__item--active a,
+    &__item--active a:after {
+      display: block;
+      font-weight: 700;
+    }
+  }
+}

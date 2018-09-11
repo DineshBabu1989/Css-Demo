@@ -1,0 +1,31 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//Create and show underlines on hover
+
+@mixin createLine {
+  display: block;
+  content: "";
+  padding-bottom: 0.5rem;
+  border-bottom: solid 2px $color-primary-light;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  /*left to right*/
+  transform-origin: 0% 50%;
+}
+
+@mixin showLine {
+  transform: scaleX(1);
+}

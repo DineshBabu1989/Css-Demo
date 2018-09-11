@@ -1,0 +1,58 @@
+/*********************************Burger button*****************************/
+//Create button icon
+.navbar-mobile__button {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  cursor: pointer;
+
+  &--line {
+    width: 30px;
+    height: 2px;
+    background-color: $color-white;
+    transition: 0.4s;
+  }
+
+  &--line-2 {
+    margin: 6px 0px;
+  }
+}
+
+//Button animation to X symbol on click
+.change .navbar-mobile__button {
+  &--line-1 {
+    -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+    transform: rotate(-45deg) translate(-7px, 6px);
+  }
+
+  &--line-2 {
+    opacity: 0;
+  }
+
+  &--line-3 {
+    -webkit-transform: rotate(45deg) translate(-5px, -4px);
+    transform: rotate(45deg) translate(-5px, -4px);
+  }
+}
+
+/*****************************Button type-1************************/
+.btn__type-1 {
+  width: 22rem;
+  height: 6rem;
+  border: 2px solid $color-primary-light;
+  padding: 2rem 6.6rem;
+  text-transform: uppercase;
+  color: $color-primary-light;
+  transition: background-color 250ms ease-in-out;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $color-primary-light;
+    color: $color-primary-dark;
+  }
+}

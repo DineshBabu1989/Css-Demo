@@ -1,0 +1,287 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  background-color: #fff; }
+
+body {
+  font-family: "Fira Sans Condensed", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #fff; }
+
+a,
+a:hover {
+  color: inherit;
+  text-decoration-line: none; }
+
+@media (min-width: 1366px) {
+  body {
+    display: flex;
+    justify-content: center; }
+  .page {
+    width: 1366px; } }
+
+/*******************MAIN NAVIGATION BAR*******************/
+.navbar-mobile {
+  display: none; }
+
+#navbar-mobile__sidebar {
+  display: none; }
+
+#content {
+  width: 100%;
+  height: 100vh;
+  z-index: 10; }
+
+@media (max-width: 7.68rem) {
+  #content {
+    box-shadow: 8px -1px 9px -10px rgba(0, 0, 0, 0.78);
+    transition: margin-left 250ms easeout; } }
+
+.navbar-main {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  color: #fff;
+  background-color: #212121;
+  align-items: center;
+  text-transform: uppercase;
+  height: 8rem;
+  font-size: 1.4rem;
+  font-weight: 500; }
+  .navbar-main__item {
+    color: #fff;
+    margin-top: 1rem;
+    text-decoration-style: none; }
+  .navbar-main__item:after {
+    display: block;
+    content: "";
+    padding-bottom: 0.5rem;
+    border-bottom: solid 2px #fedd00;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    /*left to right*/
+    transform-origin: 0% 50%; }
+  .navbar-main__item:hover:after {
+    transform: scaleX(1); }
+  .navbar-main__logo {
+    width: 12rem;
+    height: 10rem; }
+
+/*******************MOBILE NAVIGATION BAR*******************/
+@media (max-width: 768px) {
+  /*Hide main navbar*/
+  #navbar-main {
+    display: none; }
+  /*Mobile top navbar*/
+  .navbar-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #212121;
+    height: 8rem; }
+    .navbar-mobile__logo {
+      width: 12rem;
+      height: 10rem;
+      margin-left: 1rem; }
+    .navbar-mobile__button {
+      width: 4.5rem;
+      height: 4.5rem;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      cursor: pointer; }
+  #content.active {
+    margin-left: -60%; }
+  .wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100vh; }
+  /*Mobile side navbar*/
+  #navbar-mobile__sidebar {
+    display: flex;
+    background-color: #fedd00;
+    margin-right: -60%;
+    width: 60%;
+    height: 100vh;
+    transition: margin-right 250ms ease-out;
+    -webkit-transition: margin-right 250ms ease-out; }
+    #navbar-mobile__sidebar.active {
+      margin-right: 0px; }
+  .navbar-mobile__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center; }
+  .navbar-mobile__item {
+    list-style: none;
+    margin-top: 2rem;
+    position: relative; }
+  .navbar-mobile__item a {
+    color: #212121;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-right: 5rem; }
+  .navbar-mobile__item a:after {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 0.2rem;
+    width: 2.2rem;
+    background-color: black; }
+  .navbar-mobile__item--active a,
+  .navbar-mobile__item--active a:after {
+    display: block;
+    font-weight: 700; } }
+
+/*********************************Burger button*****************************/
+.navbar-mobile__button {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  cursor: pointer; }
+  .navbar-mobile__button--line {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.4s; }
+  .navbar-mobile__button--line-2 {
+    margin: 6px 0px; }
+
+.change .navbar-mobile__button--line-1 {
+  -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+  transform: rotate(-45deg) translate(-7px, 6px); }
+
+.change .navbar-mobile__button--line-2 {
+  opacity: 0; }
+
+.change .navbar-mobile__button--line-3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -4px);
+  transform: rotate(45deg) translate(-5px, -4px); }
+
+/*****************************Button type-1************************/
+.btn__type-1 {
+  width: 22rem;
+  height: 6rem;
+  border: 2px solid #fedd00;
+  padding: 2rem 6.6rem;
+  text-transform: uppercase;
+  color: #fedd00;
+  transition: background-color 250ms ease-in-out;
+  font-size: 1.6rem;
+  font-weight: 500; }
+  .btn__type-1:hover {
+    background-color: #fedd00;
+    color: #212121; }
+
+/*******************MAIN JUMPTRON*******************/
+.main-jumptron {
+  display: flex;
+  width: 100%;
+  height: 83rem;
+  color: #fff;
+  background: #212121;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  position: relative; }
+  .main-jumptron__border {
+    width: 100%;
+    height: 85rem;
+    background-color: #fedd00;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    z-index: -1; }
+  .main-jumptron__msg {
+    width: 50%;
+    margin: 14.5rem 0rem 0rem 14rem;
+    z-index: 10; }
+  .main-jumptron__msg--title {
+    width: 100%;
+    font-size: 9rem;
+    text-transform: uppercase;
+    font-weight: 500; }
+  .main-jumptron__msg--title-2 {
+    color: #fedd00; }
+  .main-jumptron__msg--text {
+    font-size: 2.4rem;
+    color: inherit;
+    margin-bottom: 4.6rem; }
+  .main-jumptron__pic {
+    display: block;
+    width: 50%;
+    height: 43.4rem;
+    margin: 11.5rem 10.9rem 16.1rem 0rem; }
+  .main-jumptron__img {
+    width: 100%; }
+  .main-jumptron__wheel {
+    width: 25rem;
+    height: 25rem;
+    -webkit-animation: rotateIn 15s infinite linear;
+    position: absolute;
+    top: 10rem;
+    left: 40rem;
+    z-index: -10; }
+
+/*****************************INTERMEDIATE DEVICES*************/
+@media (max-width: 1200px) {
+  .main-jumptron {
+    width: 100%;
+    justify-content: center; }
+    .main-jumptron__msg {
+      width: 75%;
+      margin: 14.5rem 0rem 0rem 0rem; }
+    .main-jumptron__pic {
+      display: none; } }
+
+/*******************MAIN JUMPTRON IN MOBILE DEVICES*******************/
+@media (max-width: 710px) {
+  .main-jumptron {
+    height: 50rem; }
+    .main-jumptron__border {
+      height: 53rem; }
+    .main-jumptron__msg {
+      width: 100%;
+      margin: 2rem 0rem 0rem 2rem; }
+    .main-jumptron__msg--title {
+      font-size: 6rem; }
+    .main-jumptron__msg--title-2 {
+      color: #fedd00; }
+    .main-jumptron__msg--text {
+      font-size: 1.6rem; }
+    .main-jumptron__pic {
+      display: none; }
+    .main-jumptron__img {
+      width: 100%; }
+    .main-jumptron__wheel {
+      width: 20rem;
+      height: 20rem;
+      -webkit-animation: rotateIn 15s infinite linear;
+      position: absolute;
+      top: 1rem;
+      left: 20rem; } }
+
+@keyframes rotateIn {
+  0% {
+    transform-origin: center center;
+    transform: rotate(360deg); }
+  100% {
+    transform-origin: center center;
+    transform: rotate(0); } }

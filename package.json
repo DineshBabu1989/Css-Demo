@@ -1,0 +1,11 @@
+{
+  "name": "gem_site_sass",
+  "version": "1.0.0",
+  "description": "React sass template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dinesh Babu",
+  "license": "ISC"
+}

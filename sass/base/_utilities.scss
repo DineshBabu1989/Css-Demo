@@ -1,0 +1,10 @@
+//Centering page on screens above 1366px
+@media (min-width: 1366px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  .page {
+    width: 1366px;
+  }
+}
